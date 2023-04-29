@@ -1,0 +1,213 @@
+ncdu (1.18-0.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * d/patches: cherry-pick commits to fix FTBFS on GNU/Hurd
+
+ -- Christian Göttsche <cgzones@googlemail.com>  Wed, 08 Feb 2023 17:15:32 +0100
+
+ncdu (1.18-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream version 1.18 (Closes: #1029172)
+  * d/control: bump to std version 4.6.2 (no further changes)
+  * d/copyright: convert to machine-readable format
+
+ -- Christian Göttsche <cgzones@googlemail.com>  Sun, 05 Feb 2023 16:37:11 +0100
+
+ncdu (1.17-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream version 1.17 (Closes: #894380, #996240)
+  * d/control:
+    - update build dependencies
+      + replace transitional libncurses5-dev and libncursesw5-dev by
+        libncurses-dev
+      + add pkg-config for successful autoreconf
+      + drop autotools-dev, default since debhelper compat 10
+    - bump to debhelper compat 13
+    - bump to std-ver 4.6.0 (no further changes)
+    - set Rules-Requires-Root no
+    - use https homepage address
+  * d/rules: enable hardening and LTO
+  * d/u/signing-key.asc: add upstream gpg key
+  * d/watch:
+    - use https
+    - bump to format version 4
+    - fix to upstream version 1, since version 2 is a reimplementation in
+      the Zig language
+    - add pgpsigurlmangle option
+  * d/u/metadata: add basic metadata
+
+ -- Christian Göttsche <cgzones@googlemail.com>  Thu, 28 Apr 2022 18:10:45 +0200
+
+ncdu (1.15.1-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #961876)
+    - Fixes building with GCC 10 (Closes: #957580)
+    - An option to skip kernel pseudo filesystems (Closes: #953731)
+  * debian/patches:
+    - 0001-Increase-space-for-item-count-in-loading-screen: removed
+      (merged upstream).
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 09 Aug 2020 12:38:18 +0200
+
+ncdu (1.14.1-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #821750)
+  * debian/source/format:
+    - Introduced, with '3.0 (quilt)'.
+  * debian/patches:
+    - 0001-Increase-space-for-item-count-in-loading-screen: added
+      (cherry-picked from upstream). (Closes: #931444)
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 08 Sep 2019 09:50:47 +0200
+
+ncdu (1.13-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright:
+    - Updated upstream and packaging years.
+  * debian/control:
+    - Bumped Standards-Version to 4.1.1, no changes needed.
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Thu, 29 Mar 2018 14:24:51 +0200
+
+ncdu (1.12-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright:
+    - Updated upstream and packaging years.
+  * debian/control:
+    - Bumped Standards-Version to 3.9.8, no changes needed.
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Mon, 26 Sep 2016 10:03:26 +0200
+
+ncdu (1.11-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - Bumped Standards-Version to 3.9.6, no changes needed.
+  * debian/copyright:
+    - Updated upstream copyright years.
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 30 Aug 2015 12:52:58 +0300
+
+ncdu (1.10-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/watch:
+    - Adjusted to skip binary builds.
+  * debian/copyright:
+    - Updated upstream and own copyright years.
+  * debian/compat:
+    - Bumped to 9 to get automatic dpkg-buildflags support.
+  * debian/control:
+    - Build-depend on debhelper 9.
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Thu, 30 May 2013 22:06:29 +0300
+
+ncdu (1.9-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/copyright:
+    - Updated copyright years.
+  * debian/control:
+    - Bumped Standards-Version to 3.9.4, no changes needed.
+  * debian/manpages:
+    - Upstream man page was moved out of doc/.
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Mon, 01 Oct 2012 20:16:11 +0300
+
+ncdu (1.8-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - A spelling fix, suggested by lintian.
+    - Bumped Standards-Version to 3.9.2, no changes needed.
+  * debian/copyright:
+    - Updated upstream copyright years.
+    - Clarified the own packaging copyrights.
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Sat, 19 Nov 2011 14:05:55 +0200
+
+ncdu (1.7-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 13 Feb 2011 16:30:28 +0200
+
+ncdu (1.7-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - Bumped 'Standards-Version' to 3.9.1, no changes needed.
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Tue, 17 Aug 2010 17:44:23 +0300
+
+ncdu (1.6-1) unstable; urgency=low
+
+  * New upstream release.
+    - Handles properly Unicode characters in the file names. (Closes: #460568)
+  * debian/control:
+    - Added build-dependency on 'libncursesw5-dev'.
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Mon, 26 Oct 2009 10:44:05 +0200
+
+ncdu (1.5-1) unstable; urgency=low
+
+  * New maintainer. Thanks for work, Luca Bedogni. (Closes: #550266)
+    - Fixed segfault on empty directory. (Closes: #472294)
+    - Use IEEE 1541 GiB not GB units. (Closes: #539553)
+  * New upstream release. (Closes: #522307, #531845)
+  * debian/patches:
+    - Removed, all fixes applied upstream.
+  * debian/rules:
+    - Rewritten using debhelper 7.
+  * debian/control:
+    - Bumped build-dependency on debhelper to (>= 7).
+    - Dropped weird build-dependency on debconf.
+    - Dropped build-dependency on dpatch.
+    - Bumped Standards-Version to 3.8.3, no changes needed.
+    - Tiny capitalness correction in the long description.
+  * debian/compat:
+    - Bumped to 7.
+  * debian/watch:
+    - Removed auto-uupdate command, useless for me.
+
+ -- Eugene V. Lyubimkin <jackyf@debian.org>  Mon, 12 Oct 2009 13:36:53 +0300
+
+ncdu (1.3-2) unstable; urgency=low
+
+  * Added dpatch as a dependency.
+  * Now the directory is listed with a leading and closing blankspace (Closes:
+      #472194).
+  * Bumped standard version to 3.7.3
+  * Added Homepage tag and removed from the long description
+
+ -- Luca Bedogni <me@lucabedogni.it>  Mon, 26 May 2008 15:24:59 +0200
+
+ncdu (1.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Luca Bedogni <me@lucabedogni.it>  Wed, 08 Aug 2007 20:11:52 +0200
+
+ncdu (1.2-1) unstable; urgency=low
+
+  * New upstream releas
+  * Modified the $(MAKE) distclean call in debian/rules according to lintian
+
+ -- Luca Bedogni <me@lucabedogni.it>  Wed, 25 Jul 2007 08:52:56 +0200
+
+ncdu (1.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Added watch file
+
+ -- Luca Bedogni <me@lucabedogni.it>  Mon, 30 Apr 2007 20:04:35 +0200
+
+ncdu (1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #418047)
+
+ -- Luca Bedogni <me@lucabedogni.it>  Fri,  6 Apr 2007 16:31:31 +0200

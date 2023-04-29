@@ -1,0 +1,18 @@
+Source: ncdu
+Section: admin
+Priority: optional
+Maintainer: Eugene V. Lyubimkin <jackyf@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               libncurses-dev,
+               pkg-config
+Rules-Requires-Root: no
+Standards-Version: 4.6.2
+Homepage: https://dev.yorhel.nl/ncdu/
+
+Package: ncdu
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: ncurses disk usage viewer
+ Ncdu is a ncurses-based du viewer. It provides a fast and easy-to-use interface
+ through famous du utility. It allows one to browse through the directories and
+ show percentages of disk usage with ncurses library.

@@ -1,0 +1,31 @@
+From: Yorhel <git@yorhel.nl>
+Date: Wed, 8 Feb 2023 08:14:19 +0100
+Subject: Fix build failure if exclude-kernfs option is not available
+
+Applied-Upstream: https://code.blicky.net/yorhel/ncdu/commit/699394164692e0a037a75b72aec60e3942e86385
+
+Fixes #218
+---
+ src/dir_scan.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/dir_scan.c b/src/dir_scan.c
+index 7c1bc77..9c182f3 100644
+--- a/src/dir_scan.c
++++ b/src/dir_scan.c
+@@ -51,6 +51,7 @@
+ 
+ 
+ int dir_scan_smfs; /* Stay on the same filesystem */
++int exclude_kernfs; /* Exclude Linux pseudo filesystems */
+ 
+ static uint64_t curdev;   /* current device we're scanning on */
+ 
+@@ -61,7 +62,6 @@ static unsigned int buf_nlink;
+ 
+ 
+ #if HAVE_LINUX_MAGIC_H && HAVE_SYS_STATFS_H && HAVE_STATFS
+-int exclude_kernfs; /* Exclude Linux pseudo filesystems */
+ 
+ static int is_kernfs(unsigned long type) {
+   if(

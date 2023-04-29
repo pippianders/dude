@@ -1,0 +1,5 @@
+version=4
+
+# Fix to version 1.*, since version 2+ is a
+# reimplementation in the Zig language.
+opts="pgpsigurlmangle=s/$/.asc/" https://dev.yorhel.nl/download/ncdu-(1\.\d.*)\.tar.gz

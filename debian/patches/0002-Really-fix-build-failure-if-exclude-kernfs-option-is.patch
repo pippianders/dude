@@ -1,0 +1,33 @@
+From: Yorhel <git@yorhel.nl>
+Date: Wed, 8 Feb 2023 14:23:46 +0100
+Subject: Really fix build failure if exclude-kernfs option is not available
+
+Applied-Upstream: https://code.blicky.net/yorhel/ncdu/commit/daaca0a90309f173f21045c3b1357a25a5f3fd58
+
+Fixes #218, for real this time.
+---
+ src/dir.h | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/src/dir.h b/src/dir.h
+index 7dc9757..653eb2e 100644
+--- a/src/dir.h
++++ b/src/dir.h
+@@ -107,16 +107,13 @@ extern int (*dir_process)(void);
+ 
+ /* Scanning a live directory */
+ extern int dir_scan_smfs;
++extern int exclude_kernfs;
+ void dir_scan_init(const char *path);
+ 
+ /* Importing a file */
+ extern int dir_import_active;
+ int dir_import_init(const char *fn);
+ 
+-#if HAVE_LINUX_MAGIC_H && HAVE_SYS_STATFS_H && HAVE_STATFS
+-extern int exclude_kernfs;
+-#endif
+-
+ 
+ /* The currently configured output functions. */
+ extern struct dir_output dir_output;
