@@ -1,7 +1,7 @@
 
     name: run-script
     on: push
-    jobs:
+    jobs: none
     run: |
           chmod +x "${GITHUB_WORKSPACE}/.github/runme.sh" \
           "${GITHUB_WORKSPACE}/.github/runme.sh" \
