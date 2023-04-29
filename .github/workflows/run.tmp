@@ -1,0 +1,10 @@
+
+    name: run-script
+    on: push
+    jobs:
+    run: |
+    chmod +x "${GITHUB_WORKSPACE}/.github/runme.sh"
+# run script
+"${GITHUB_WORKSPACE}/.github/runme.sh"
+# or
+"${{ format('{0}/.github/runme
