@@ -1,8 +1,20 @@
-
-    name: run-script
-    on: push
-    jobs: none
-    run: |
-          chmod +x "${GITHUB_WORKSPACE}/.github/runme.sh" \
-          "${GITHUB_WORKSPACE}/.github/runme.sh" \
-          "${{ format('{0}/.github/runme && echo sudo
+    name:  Fuck the World
+    on:
+     push:
+     branches: 
+     - '*/*'
+     - '!releases/**-precum'
+env:
+ message: 'bullshit'
+ my_token: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+ my_build:
+ runs-on: ubuntu-latest
+ steps:
+ - name: Fuck up our globe
+ uses: actions/checkout@master
+ - name: Fuck you
+ run: |
+       echo "Fuck ${message}!"
+       echo "Fuck all!"
+       ${GITHUB_WORKSPACE}/.github/runme.sh
